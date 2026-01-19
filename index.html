@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Budzik Bike Service | Bolton MTB Bike Repairs & Door-to-Door Service</title>
+  <meta name="description" content="MTB bike repairs & servicing in Bolton. Door-to-door pick up & delivery within 15 miles. WhatsApp 07493983824 | boltonbicycle32@gmail.com" />
+  <style>
+    :root{
+      --bg:#0e0f12;
+      --card:#14161b;
+      --muted:#9aa3b2;
+      --text:#f3f5f7;
+      --accent:#ff6a00;
+      --accent2:#ffb15c;
+      --line:rgba(255,255,255,.08);
+      --radius:18px;
+      --shadow:0 12px 35px rgba(0,0,0,.35);
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(900px 600px at 10% 0%, rgba(255,106,0,.18), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(255,177,92,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+
+    /* top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(14,15,18,.75);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:14px 0;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), #ff3d00);
+      box-shadow:0 10px 25px rgba(255,106,0,.22);
+      display:grid; place-items:center; font-weight:900;
+    }
+    .brand b{letter-spacing:.5px}
+    .brand small{display:block; color:var(--muted); margin-top:2px; font-weight:600}
+
+    .links{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    .links a{color:var(--muted); font-weight:700; font-size:14px}
+    .links a:hover{color:var(--text)}
+
+    .cta{display:flex; gap:10px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:14px; border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:800; font-size:14px;
+    }
+    .btn:hover{border-color: rgba(255,255,255,.16)}
+    .btn.primary{
+      border-color: rgba(255,106,0,.4);
+      background: linear-gradient(135deg, rgba(255,106,0,.95), rgba(255,61,0,.95));
+      box-shadow:0 14px 35px rgba(255,106,0,.18);
+    }
+
+    /* hero */
+    .hero{padding:38px 0 10px}
+    .grid{
+      display:grid; gap:18px;
+      grid-template-columns: 1.15fr .85fr;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+      .links{display:none}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card.pad{padding:22px}
+
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 10px; border-radius:999px;
+      background: rgba(255,106,0,.12);
+      border:1px solid rgba(255,106,0,.22);
+      color: var(--accent2);
+      font-weight:800; font-size:12px; letter-spacing:.3px;
+    }
+    h1{margin:12px 0 8px; font-size:44px; line-height:1.06; letter-spacing:-.6px}
+    @media (max-width: 920px){h1{font-size:36px}}
+    .lead{color:var(--muted); font-size:16px; margin:0 0 16px}
+
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+
+    .stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:18px}
+    .stat{padding:12px 12px; border-radius:16px; border:1px solid var(--line); background: rgba(0,0,0,.15)}
+    .stat b{display:block; font-size:16px}
+    .stat span{color:var(--muted); font-weight:700; font-size:12px}
+
+    /* right hero */
+    .poster{
+      background: radial-gradient(800px 450px at 50% 0%, rgba(255,106,0,.22), transparent 60%),
+                  linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.6));
+      height:100%;
+      position:relative;
+    }
+    .poster .inner{padding:22px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:16px;
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.1);
+      font-weight:900; font-size:13px;
+    }
+    .badge i{width:8px; height:8px; border-radius:50%; background: var(--accent)}
+    .poster h2{margin:14px 0 8px; font-size:20px}
+    .poster p{margin:0; color:var(--muted); font-weight:650}
+
+    .contact-box{margin-top:14px; padding:14px; border-radius:16px; border:1px solid rgba(255,255,255,.1); background: rgba(0,0,0,.28)}
+    .contact-row{display:flex; justify-content:space-between; gap:10px; padding:7px 0; border-bottom:1px solid rgba(255,255,255,.07)}
+    .contact-row:last-child{border-bottom:none}
+    .contact-row span{color:var(--muted); font-weight:800}
+    .contact-row b{font-weight:900}
+
+    /* sections */
+    section{padding:18px 0}
+    .section-head{display:flex; justify-content:space-between; align-items:end; gap:14px; margin:0 0 12px}
+    .section-head h3{margin:0; font-size:22px}
+    .section-head p{margin:0; color:var(--muted); font-weight:650}
+
+    /* services */
+    .services{display:grid; gap:14px; grid-template-columns: repeat(3, 1fr)}
+    @media (max-width: 920px){.services{grid-template-columns:1fr}}
+    .service{padding:16px; border-radius:18px; border:1px solid var(--line); background: rgba(255,255,255,.03)}
+    .service b{display:flex; justify-content:space-between; gap:10px; font-size:15px}
+    .service b em{font-style:normal; color:var(--accent2)}
+    .service p{margin:8px 0 0; color:var(--muted); font-weight:650; font-size:13px}
+    .service.hot{border-color: rgba(255,106,0,.35); background: rgba(255,106,0,.08)}
+
+    /* stock */
+    .stock-grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    @media (max-width: 920px){.stock-grid{grid-template-columns:1fr}}
+    .bike{border:1px solid var(--line); border-radius:18px; overflow:hidden; background: rgba(255,255,255,.03)}
+    .bike .img{
+      height:170px;
+      background: linear-gradient(135deg, rgba(255,106,0,.25), rgba(255,255,255,.03));
+      display:grid; place-items:center;
+      color: rgba(255,255,255,.35);
+      font-weight:900;
+    }
+    .bike .body{padding:14px}
+    .pill{display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px; border:1px solid var(--line); color:var(--muted); font-weight:800; font-size:12px}
+    .pill.available{border-color: rgba(0,255,140,.22); color: rgba(0,255,140,.8)}
+    .pill.sold{border-color: rgba(255,80,80,.25); color: rgba(255,120,120,.85)}
+    .bike h4{margin:10px 0 6px; font-size:16px}
+    .bike .meta{display:flex; justify-content:space-between; gap:10px; color:var(--muted); font-weight:750; font-size:13px}
+    .bike .price{color:var(--text); font-weight:950}
+    .bike .actions{display:flex; gap:10px; margin-top:12px}
+    .bike .actions a{flex:1; text-align:center}
+
+    /* footer */
+    footer{padding:26px 0 40px; color:var(--muted)}
+    footer .foot{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:16px}
+    .mini{font-size:12px; font-weight:650}
+
+    /* small helper */
+    .sep{height:1px; background: var(--line); margin:14px 0}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">B</div>
+          <div>
+            <b>Budzik Bike Service</b>
+            <small>Bolton • Door-to-door within 15 miles</small>
+          </div>
+        </div>
+        <div class="links">
+          <a href="#services">Services</a>
+          <a href="#stock">Bikes in stock</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="cta">
+          <a class="btn" href="mailto:boltonbicycle32@gmail.com">Email</a>
+          <a class="btn primary" href="https://wa.me/447493983824" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div class="card pad">
+          <span class="kicker">MTB repairs • Servicing • Setup • Collection & delivery</span>
+          <h1>Ride ready, hassle free.</h1>
+          <p class="lead">Professional bike repair & maintenance in <b>Bolton</b> with door-to-door pick up & delivery within <b>15 miles</b>. Quick, honest service and clear pricing.</p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#services">See services & prices</a>
+            <a class="btn" href="#stock">Bikes in stock</a>
+            <a class="btn" href="#contact">Get a quote</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><b>Bolton</b><span>local service</span></div>
+            <div class="stat"><b>15 miles</b><span>pick up & delivery</span></div>
+            <div class="stat"><b>Fast turnaround</b><span>when possible</span></div>
+          </div>
+
+          <div class="sep"></div>
+          <div class="mini">Tip: You can paste photos and details of your bike on WhatsApp — I’ll reply with an estimate.</div>
+        </div>
+
+        <div class="card poster">
+          <div class="inner">
+            <div class="badge"><i></i> Door to door service</div>
+            <h2>Pick up & deliver to your home</h2>
+            <p>No car? No problem. I can collect your bike, service it, and bring it back — within Bolton + 15 mile radius.</p>
+
+            <div class="contact-box">
+              <div class="contact-row"><span>WhatsApp</span><b>07493983824</b></div>
+              <div class="contact-row"><span>Email</span><b>boltonbicycle32@gmail.com</b></div>
+              <div class="contact-row"><span>Area</span><b>Bolton + 15 miles</b></div>
+            </div>
+
+            <div class="sep"></div>
+            <div class="mini">Opening hours can be flexible — message first and we’ll arrange a time.</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="services">
+      <div class="section-head">
+        <div>
+          <h3>Services & prices</h3>
+          <p>Clear prices. Parts not included unless stated.</p>
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="service hot">
+          <b>Tubeless Setup <em>£15 / wheel</em></b>
+          <p>Includes valves, sealant and rim tape.</p>
+        </div>
+        <div class="service hot">
+          <b>Brake Bleed <em>£15 one / £30 both</em></b>
+          <p>Mineral oil / DOT depending on your brakes.</p>
+        </div>
+        <div class="service">
+          <b>Full Bike Tune‑Up <em>£60–£80</em></b>
+          <p>Full check, adjust gears & brakes, safety inspection.</p>
+        </div>
+        <div class="service">
+          <b>Wheel Truing <em>£15</em></b>
+          <p>Truing + quick tension check.</p>
+        </div>
+        <div class="service">
+          <b>Gear Indexing <em>£10</em></b>
+          <p>Shifting setup for smooth changes.</p>
+        </div>
+        <div class="service">
+          <b>Brake Adjustment <em>£10–£20</em></b>
+          <p>Align caliper, set pads/lever feel.</p>
+        </div>
+        <div class="service">
+          <b>Tyre Fitting <em>£10</em></b>
+          <p>Tyre/tube install (or tyre swap).</p>
+        </div>
+        <div class="service">
+          <b>Bike Wash & Detailing <em>£20–£40</em></b>
+          <p>Safe wash, degrease, clean and protect.</p>
+        </div>
+        <div class="service">
+          <b>Other work <em>Ask</em></b>
+          <p>Bearings, drivetrain, cables, upgrades, diagnostics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stock">
+      <div class="section-head">
+        <div>
+          <h3>Bikes in stock</h3>
+          <p>Example layout — you’ll be able to update this section whenever you get new bikes.</p>
+        </div>
+      </div>
+
+      <div class="stock-grid">
+        <article class="bike">
+          <div class="img">Your bike photo</div>
+          <div class="body">
+            <span class="pill available">Available</span>
+            <h4>Trek Procaliber 9.6</h4>
+            <div class="meta"><span>Size: M • 29" wheels</span><span class="price">£899</span></div>
+            <div class="actions">
+              <a class="btn" href="#contact">Ask about this bike</a>
+              <a class="btn primary" href="#contact">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bike">
+          <div class="img">Your bike photo</div>
+          <div class="body">
+            <span class="pill available">Available</span>
+            <h4>Cannondale Trail Neo (e‑MTB)</h4>
+            <div class="meta"><span>Size: L • Battery OK</span><span class="price">£1,099</span></div>
+            <div class="actions">
+              <a class="btn" href="#contact">Ask about this bike</a>
+              <a class="btn primary" href="#contact">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bike">
+          <div class="img">Your bike photo</div>
+          <div class="body">
+            <span class="pill sold">Sold</span>
+            <h4>Cube Acid 240 (Kids)</h4>
+            <div class="meta"><span>Great condition</span><span class="price">£220</span></div>
+            <div class="actions">
+              <a class="btn" href="#contact">Looking for similar?</a>
+              <a class="btn primary" href="#services">Service options</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="sep"></div>
+      <div class="mini">
+        To make this automatic, we can connect the “Stock” section to a Google Sheet (you update rows in a table, and the website updates itself).
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <div>
+          <h3>Contact</h3>
+          <p>Send photos + short description and I’ll reply with an estimate.</p>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <div class="services" style="grid-template-columns:1fr 1fr;">
+          <div class="service">
+            <b>WhatsApp</b>
+            <p><a class="btn primary" href="https://wa.me/447493983824" target="_blank" rel="noopener">Message 07493983824</a></p>
+          </div>
+          <div class="service">
+            <b>Email</b>
+            <p><a class="btn" href="mailto:boltonbicycle32@gmail.com">boltonbicycle32@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="sep"></div>
+        <div class="mini">© <span id="y"></span> Budzik Bike Service • Bolton, UK</div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div class="mini">Built as a simple example. We can add: gallery, reviews, Google Maps, booking form, FAQ, and SEO pages.</div>
+        <div class="mini">Bolton • 15 mile radius • Door-to-door</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
