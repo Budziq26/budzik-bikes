@@ -36,7 +36,38 @@
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background: var(--bg);
-      overflow-x:hidden;
+      overflow-x:hidden;.bikes {
+  margin: 60px 0;
+}
+
+.bikes h2 {
+  margin-bottom: 24px;
+}
+
+.bike-card {
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+.bike-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.bike-card h3 {
+  margin: 8px 0;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--orange);
+}
+
     }
 
     /* ====== REAL MTB/WORKSHOP BACKGROUND (reliable) ======
@@ -553,29 +584,24 @@
     </section>
 
     <!-- BIKES FOR SALE -->
-    <section id="sale">
-      <div class="section-head">
-        <div>
-          <h3>Bikes for sale</h3>
-          <p>All current bikes are posted on Facebook with full photos and updates.</p>
-        </div>
-      </div>
+    <section class="bikes">
+  <h2>Bikes for Sale</h2>
 
-      <div class="card sale-cta">
-        <div class="kicker" style="justify-content:center; margin:0 auto 12px;">Always up to date • Full photos • Quick replies</div>
-        <h3 style="margin:0 0 8px; font-size:24px;">See current bikes on Facebook</h3>
-        <p class="lead" style="margin:0 0 16px;">Tap the button — newest bikes first.</p>
+  <div class="bike-card">
+    <img src="assets/bikes/20260126_141436.jpg" alt="GT Force Sport MTB for sale Bolton">
+    <h3>GT Force Sport</h3>
+    <p>Full Suspension MTB • Size m • Fully serviced</p>
+    <p class="price">£850</p>
+  </div>
 
-        <a class="big-fb" href="https://www.facebook.com/BudzikBikes" target="_blank" rel="noopener">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24H12.82v-9.294H9.692V11.01h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"/>
-          </svg>
-          View bikes for sale
-        </a>
+  <div class="bike-card">
+    <img src="assets/bikes/cube-acid-1.jpg" alt="Cube Acid mountain bike for sale Bolton">
+    <h3>Cube Acid</h3>
+    <p>MTB • Size M • Ready to ride</p>
+    <p class="price">£420</p>
+  </div>
+</section>
 
-        <div class="mini" style="margin-top:12px;">Can’t find what you need? Message me on WhatsApp and I’ll help you choose the right bike.</div>
-      </div>
-    </section>
 
     <!-- CONTACT -->
     <section id="contact">
