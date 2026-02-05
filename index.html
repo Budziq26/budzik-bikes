@@ -446,6 +446,21 @@
       .cta{justify-content:flex-start}
       .brand-name{white-space:normal}
     }
+    /* ===== Highlight Bikes for Sale in menu ===== */
+.nav-links .nav-sale {
+  background: linear-gradient(135deg, #ff6a00, #ff3d00);
+  color: #fff !important;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  box-shadow: 0 8px 24px rgba(255,106,0,.45);
+}
+
+.nav-links .nav-sale:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
   </style>
 </head>
 
@@ -462,7 +477,7 @@
 
         <div class="nav-links">
           <a href="#services">Services</a>
-          <a href="#sale">Bikes for sale</a>
+         <a href="#sale" class="nav-sale">Bikes for sale</a>
           <a href="#contact">Contact</a>
         </div>
 
