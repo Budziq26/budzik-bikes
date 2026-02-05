@@ -440,7 +440,22 @@
     }
     @media (max-width: 720px){
       /* On mobile, we hide nav links to avoid “amateur” stacking */
-      .nav-links{display:none !important;}
+      .nav-links{
+  display:flex !important;
+  gap:12px;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:6px 2px;
+}
+
+.nav-links a{
+  font-size:14px;
+  padding:8px 12px;
+  border-radius:12px;
+  white-space:nowrap;
+}
+
       .brand{min-width:auto}
       .contact-grid{grid-template-columns:1fr}
       .cta{justify-content:flex-start}
